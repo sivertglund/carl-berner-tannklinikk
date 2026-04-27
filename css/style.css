@@ -700,6 +700,33 @@ section { padding: 90px 0; }
 }
 
 /* ---------- Testimonials ---------- */
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 10px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .92rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+.rating-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary);
+  color: var(--text);
+}
+.rating-badge .stars-row {
+  color: #F2B441;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+.rating-badge b { color: var(--ink); font-weight: 700; }
+
 .testimonials {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -710,21 +737,58 @@ section { padding: 90px 0; }
   border-radius: var(--radius);
   padding: 30px;
   border: 1px solid var(--line);
+  position: relative;
+  transition: transform var(--t), box-shadow var(--t);
+  display: flex;
+  flex-direction: column;
+}
+.testimonial:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+.testimonial::before {
+  content: "\201C";
+  position: absolute;
+  top: 12px;
+  right: 26px;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--primary-soft);
+  font-weight: 700;
+  pointer-events: none;
 }
 .testimonial .stars {
   color: #F2B441;
   letter-spacing: 2px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-size: 1.05rem;
+  position: relative;
+  z-index: 1;
+}
+.testimonial .t-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 12px;
+  letter-spacing: -0.012em;
+  position: relative;
+  z-index: 1;
 }
 .testimonial p {
-  font-style: italic;
   color: var(--text);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
+  margin: 0;
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
 }
 .testimonial .author {
-  margin-top: 18px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
   font-weight: 600;
   color: var(--ink);
   font-size: .94rem;
@@ -734,6 +798,7 @@ section { padding: 90px 0; }
   font-weight: 400;
   color: var(--muted);
   font-size: .82rem;
+  margin-top: 2px;
 }
 @media (max-width: 900px) { .testimonials { grid-template-columns: 1fr; } }
 
