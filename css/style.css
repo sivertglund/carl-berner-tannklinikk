@@ -13,7 +13,10 @@
   --text: #2C3D3B;
   --muted: #6A7977;
   --line: #E4ECEA;
-  --bg: #FAFBFB;
+  --bg: #FFFFFF;
+  --bg-cream: #FFF6E8;
+  --bg-mint-soft: #F4FBF9;
+  --bg-mint: #DEF1EC;
   --surface: #FFFFFF;
   --warning: #E27D60;
   --max-width: 1200px;
@@ -121,10 +124,12 @@ p  { margin: 0 0 1em; }
   line-height: 1.1;
 }
 .brand .word b {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
   color: var(--ink);
   font-weight: 600;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 36;
 }
 .brand .word small {
   font-size: .72rem;
@@ -637,14 +642,10 @@ section { padding: 90px 0; }
 @media (max-width: 500px) { .process-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Sections backgrounds ---------- */
-.bg-soft {
-  background: var(--primary-softer);
-  position: relative;
-}
-.bg-cream {
-  background: linear-gradient(180deg, #FFF9F0 0%, #FFFAF2 100%);
-  position: relative;
-}
+.bg-soft { background: var(--bg-mint-soft); position: relative; }
+.bg-cream { background: var(--bg-cream); position: relative; }
+.bg-white { background: #FFFFFF; position: relative; }
+.bg-mint  { background: var(--bg-mint); position: relative; }
 .bg-accent {
   background: linear-gradient(135deg, var(--accent), #15403B);
   color: #DDF1ED;
@@ -1179,22 +1180,67 @@ section { padding: 90px 0; }
   opacity: 0.55;
   pointer-events: none;
   z-index: 0;
+  animation: blobDrift 18s ease-in-out infinite;
+  will-change: transform;
 }
 .blob.mint { background: radial-gradient(circle, rgba(91,191,168,0.55), transparent 70%); }
-.blob.cream { background: radial-gradient(circle, rgba(255,228,196,0.4), transparent 70%); }
-.blob.deep { background: radial-gradient(circle, rgba(31,78,71,0.18), transparent 70%); }
+.blob.cream { background: radial-gradient(circle, rgba(255,228,196,0.4), transparent 70%); animation-duration: 22s; animation-delay: -4s; }
+.blob.deep { background: radial-gradient(circle, rgba(31,78,71,0.18), transparent 70%); animation-duration: 26s; }
+
+@keyframes blobDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(20px, -16px) scale(1.06); }
+  66%      { transform: translate(-14px, 12px) scale(0.96); }
+}
+@media (prefers-reduced-motion: reduce) { .blob { animation: none; } }
 
 /* Ensure section content sits above bg patterns */
 section > .container, .page-header > .container { position: relative; z-index: 1; }
 
-/* Curved section divider */
-.wave-divider {
+/* Curved section divider with subtle wave animation */
+.section-wave {
   display: block;
   width: 100%;
-  height: 60px;
-  margin-bottom: -1px;
+  line-height: 0;
+  position: relative;
+  pointer-events: none;
+  margin: 0;
 }
-.wave-divider svg { width: 100%; height: 100%; display: block; }
+.section-wave svg {
+  width: 100%;
+  height: 70px;
+  display: block;
+}
+.section-wave.flip svg { transform: scaleY(-1); }
+.section-wave.tall svg { height: 100px; }
+.section-wave.compact svg { height: 50px; }
+
+@media (max-width: 700px) {
+  .section-wave svg { height: 50px; }
+  .section-wave.tall svg { height: 70px; }
+}
+
+/* Animated wave layer (for hero / hero-bottom) */
+@keyframes waveSlide {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+.wave-anim {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+.wave-anim svg {
+  width: 200%;
+  height: 90px;
+  display: block;
+  animation: waveSlide 28s linear infinite;
+}
+.wave-anim.slow svg { animation-duration: 42s; }
+.wave-anim.reverse svg { animation-direction: reverse; }
+@media (max-width: 700px) { .wave-anim svg { height: 60px; } }
+@media (prefers-reduced-motion: reduce) { .wave-anim svg { animation: none; } }
 
 /* Floating tooth decoration */
 .float-tooth {

@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="images/logo-symbol.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -133,6 +133,13 @@
     </div>
   </section>
 
+  <!-- Wave: hero → trust (animated) -->
+  <div class="wave-anim slow" style="background:#F4FBF9; margin-top:-1px;">
+    <svg viewBox="0 0 2880 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,45 C240,80 480,5 720,35 C960,65 1200,20 1440,50 C1680,80 1920,5 2160,35 C2400,65 2640,20 2880,50 L2880,90 L0,90 Z" fill="#DEF1EC"/>
+    </svg>
+  </div>
+
   <!-- Trust strip -->
   <div class="trust-strip" style="position:relative; overflow:hidden;">
     <div class="tooth-pattern tooth-pattern-dense"></div>
@@ -158,8 +165,11 @@
     </div>
   </div>
 
-  <!-- Services -->
-  <section id="behandlinger">
+  <!-- Wave: trust → services (white) -->
+  <div class="section-wave" style="background:#DEF1EC;"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,75 480,0 720,30 C960,60 1200,15 1440,45 L1440,70 L0,70 Z" fill="#FFFFFF"/></svg></div>
+
+  <!-- Services (white) -->
+  <section id="behandlinger" class="bg-white">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Våre tjenester</span>
@@ -229,8 +239,11 @@
     </div>
   </section>
 
-  <!-- Team preview -->
-  <section style="position:relative;">
+  <!-- Wave: services (white) → team (cream) -->
+  <div class="section-wave" style="background:#FFFFFF;"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,30 C240,5 480,65 720,40 C960,15 1200,55 1440,25 L1440,70 L0,70 Z" fill="#FFF6E8"/></svg></div>
+
+  <!-- Team preview (cream) -->
+  <section class="bg-cream" style="overflow:hidden;">
     <div class="dot-grid" style="opacity:0.3;"></div>
     <div class="container" style="position:relative; z-index:1;">
       <div class="section-head reveal">
@@ -280,7 +293,10 @@
     </style>
   </section>
 
-  <!-- About / Split -->
+  <!-- Wave: team (cream) → about (mint-soft) -->
+  <div class="section-wave" style="background:#FFF6E8;"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,75 480,0 720,30 C960,60 1200,15 1440,45 L1440,70 L0,70 Z" fill="#F4FBF9"/></svg></div>
+
+  <!-- About / Split (mint-soft) -->
   <section class="bg-soft" style="position:relative; overflow:hidden;">
     <div class="tooth-pattern"></div>
     <div class="container split" style="position:relative; z-index:1;">
@@ -317,42 +333,11 @@
     </div>
   </section>
 
-  <!-- Process -->
-  <section>
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Slik fungerer det</span>
-        <h2>Fra timebestilling til ferdig behandling</h2>
-        <p>En enkel og forutsigbar prosess – uten overraskelser.</p>
-      </div>
+  <!-- Wave: about (mint-soft) → testimonials (cream) -->
+  <div class="section-wave" style="background:#F4FBF9;"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,30 C240,5 480,65 720,40 C960,15 1200,55 1440,25 L1440,70 L0,70 Z" fill="#FFF6E8"/></svg></div>
 
-      <div class="process-grid">
-        <div class="process-step reveal">
-          <div class="num">01</div>
-          <h3>Bestill time</h3>
-          <p>Bruk online-bestilling, ring oss eller send e-post. Vi finner et tidspunkt som passer.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="num">02</div>
-          <h3>Undersøkelse</h3>
-          <p>Grundig kartlegging av tann- og munnhelsen, med åpen og forståelig kommunikasjon.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="num">03</div>
-          <h3>Plan og pris</h3>
-          <p>Du får en tydelig behandlingsplan med priser før vi går i gang. Du bestemmer.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="num">04</div>
-          <h3>Behandling</h3>
-          <p>Trygg, skånsom behandling – og oppfølging så lenge du trenger det.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="bg-soft" style="position:relative; overflow:hidden;">
+  <!-- Testimonials (cream) -->
+  <section class="bg-cream" style="overflow:hidden;">
     <div class="tooth-pattern"></div>
     <div class="container" style="position:relative; z-index:1;">
       <div class="section-head reveal">
@@ -394,8 +379,11 @@
     </div>
   </section>
 
+  <!-- Wave: testimonials (cream) → CTA (white) -->
+  <div class="section-wave" style="background:#FFF6E8;"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,75 480,0 720,30 C960,60 1200,15 1440,45 L1440,70 L0,70 Z" fill="#FFFFFF"/></svg></div>
+
   <!-- CTA Banner -->
-  <section>
+  <section class="bg-white">
     <div class="container">
       <div class="cta-banner reveal">
         <div>
@@ -406,24 +394,6 @@
           <a class="btn btn-primary" href="bestill-time.html">Bestill online</a>
           <a class="btn btn-ghost" href="tel:+4722357835">Ring 22 35 78 35</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- News -->
-  <section class="bg-soft">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Aktuelt</span>
-        <h2>Siste nytt fra klinikken</h2>
-      </div>
-
-      <div style="display:grid; grid-template-columns: 1fr; gap: 20px; max-width: 820px; margin: 0 auto;">
-        <article class="article-card reveal">
-          <time>1. april 2026</time>
-          <h3>God påske fra Carl Berner Tannklinikk</h3>
-          <p>Vi ønsker alle en riktig god påske! Husk å ta vare på tennene dine. Tirsdag 7. april er vi tilbake igjen, og telefonen er åpen fra kl. 08.30. Du kan også sende oss e-post – meldinger blir lest og besvart.</p>
-        </article>
       </div>
     </div>
   </section>
