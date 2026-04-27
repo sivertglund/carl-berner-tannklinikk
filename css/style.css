@@ -1398,7 +1398,7 @@ section > .container, .page-header > .container { position: relative; z-index: 1
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow);
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -1408,7 +1408,15 @@ section > .container, .page-header > .container { position: relative; z-index: 1
   width: 100% !important;
   display: block;
   border: 0;
-  background: #fff;
+  background: #000;
+}
+.fb-embed.video-embed {
+  max-width: 360px;
+  background: #000;
+}
+.fb-embed.video-embed iframe {
+  height: 640px;
+  aspect-ratio: 9 / 16;
 }
 .fb-fallback {
   padding: 40px 28px;
