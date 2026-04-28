@@ -1799,10 +1799,37 @@ section > .container, .page-header > .container { position: relative; z-index: 1
 .hide-mobile { display: initial; }
 @media (max-width: 700px) { .hide-mobile { display: none; } }
 
+/* ---------- Demo watermark bar ---------- */
+.watermark-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 100;
+  background: #0A0F0E;
+  color: #E0E6E5;
+  font-size: .82rem;
+  letter-spacing: .01em;
+  padding: 9px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  pointer-events: auto;
+}
+.watermark-bar a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,255,255,0.4);
+}
+.watermark-bar a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+body { padding-bottom: 40px; }
+@media (max-width: 600px) {
+  .watermark-bar { font-size: .75rem; padding: 8px 16px; }
+  body { padding-bottom: 36px; }
+}
+
 /* ---------- Floating phone ---------- */
 .floating-call {
   position: fixed;
-  bottom: 22px;
+  bottom: 60px;
   right: 22px;
   z-index: 90;
   width: 58px; height: 58px;
